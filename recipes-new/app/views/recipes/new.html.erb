@@ -1,10 +1,40 @@
 
 
 <h1>Cadastrar Receita</h1>
-<%= form_for @recipe do |f| %>
-  <div>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
-</div>
 
-<%end%>
+
+<%= form_for @recipe do |f|%>
+  <div>
+    <%= f.label :name, 'Nome da Receita' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :cuisine, 'Cozinha'%>
+    <%= f.text_field :cuisine %>
+  </div>
+  <div>
+    <%= f.label :kind_food, 'Tipo de Comida' %>
+    <%= f.text_field :kind_food %>
+  </div>
+   <div>
+    <%= f.label :many_peaple, 'Quantas pessoas servem' %>
+    <%= f.text_field :many_peaple %>
+  </div>
+   <div>
+    <%= f.label :preparation_time, 'Tempo de preparo' %>
+    <%= f.text_field :preparation_time %>
+  </div>
+   <div>
+    <%= f.label :difficulty_level, 'Nível de dificuldade' %>
+    <%= f.text_field :difficulty_level %>
+  </div>
+   <div>
+    <%= f.label :ingredients, 'Ingredientes' %>
+    <%= f.text_field :ingredients %>
+  </div>
+   <div>
+    <%= f.label :step_by_step, 'Passo a passo' %>
+    <%= f.text_field :step_by_step %>
+  </div>
+  <%= f.submit 'Cadastrar Receita' %>
+<% end %>

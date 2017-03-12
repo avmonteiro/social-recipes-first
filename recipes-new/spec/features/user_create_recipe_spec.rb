@@ -13,19 +13,17 @@ require 'rails_helper'
 
 			visit new_recipe_path
 			
-			
-			fill_in 'Bolo Brigadeiro', 														with: recipe.name
-			fill_in 'Doces', 																			with: recipe.kind_food
-			fill_in 'Outros', 				 														with: recipe.cuisine
-			fill_in '12',																					with: recipe.many_peaple
-			fill_in '1H30', 																			with: recipe.preparation_time
-			fill_in 'Médio', 																			with: recipe.difficulty_level
-			fill_in 'Leite, Farinha, ovos, chocolate, margarina', with: recipe.ingredients
-			fill_in 'Misturar todos os ingredientes...', 					with: recipe.step_by_step
-			
-			click_on 'Cadastrar nova Receita'
+			fill_in 'Nome da Receita', 			          	with: recipe.name			
+			fill_in 'Cozinha', 				 								  with: recipe.cuisine
+			fill_in 'Tipo de Comida', 									with: recipe.kind_food
+			fill_in 'Quantas pessoas servem',						with: recipe.many_peaple
+			fill_in 'Tempo de preparo', 								with: recipe.preparation_time
+			fill_in 'Nível de dificuldade', 						with: recipe.difficulty_level
+			fill_in 'Ingredientes', 										with: recipe.ingredients
+			fill_in 'Passo a passo', 										with: recipe.step_by_step
+						
+			click_on 'Cadastrar Receita'
 
-			
 			expect(page).to have_content recipe.name
 			expect(page).to have_content recipe.cuisine
 			expect(page).to have_content recipe.kind_food
